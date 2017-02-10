@@ -2,7 +2,7 @@
 
 return array
 (
-	'default' => array
+	'alternate' => array
 	(
 		'type'       => 'MySQL',
 		'connection' => array(
@@ -17,11 +17,12 @@ return array
 			 * array    variables    system variables as "key => value" pairs
 			 *
 			 * Ports and sockets may be appended to the hostname.
-			 */
+             */
+            // just for time being I'm gonna hard code the details
 			'hostname'   => 'localhost',
 			'database'   => 'kohana',
-			'username'   => FALSE,
-			'password'   => FALSE,
+			'username'   => 'root',     // bad practice
+			'password'   => 'toor',     // bad practice
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',
@@ -41,7 +42,7 @@ return array
 			 */
 			'dsn'        => 'mysql:host=localhost;dbname=kohana',
 			'username'   => 'root',
-			'password'   => 'r00tdb',
+			'password'   => 'toor',
 			'persistent' => FALSE,
 		),
 		/**
@@ -72,19 +73,19 @@ return array
 	 * MySQLi driver config example:
 	 *
 	 */
-// 	'alternate_mysqli' => array
-// 	(
-// 		'type'       => 'MySQLi',
-// 		'connection' => array(
-// 			'hostname'   => 'localhost',
-// 			'database'   => 'kohana',
-// 			'username'   => FALSE,
-// 			'password'   => FALSE,
-// 			'persistent' => FALSE,
-// 			'ssl'        => NULL,
-// 		),
-// 		'table_prefix' => '',
-// 		'charset'      => 'utf8',
-// 		'caching'      => FALSE,
-// 	),
+	'default' => array
+ 	(
+ 		'type'       => 'MySQLi',
+ 		'connection' => array(
+ 			'hostname'   => 'localhost',
+ 			'database'   => 'kohana',
+ 			'username'   => 'root',
+ 			'password'   => 'toor',
+ 			'persistent' => FALSE,
+ 			'ssl'        => NULL,
+ 		),
+ 		'table_prefix' => '',
+ 		'charset'      => 'utf8',
+ 		'caching'      => FALSE,
+ 	),
 );

@@ -17,7 +17,11 @@ class Model_Auth_User extends ORM {
 	protected $_has_many = array(
 		'user_tokens' => array('model' => 'User_Token'),
 		'roles'       => array('model' => 'Role', 'through' => 'roles_users'),
-	);
+    );
+
+    protected $_has_one = array(
+        'profile'    => array('model' => 'Profile'),
+    );
 
 	/**
 	 * Rules for the user model. Because the password is _always_ a hash
