@@ -151,11 +151,12 @@ Cookie::$salt = "oiarenstoiearntyufntoenrst";
 /* 		'action'     => 'index', */
     /* 	)); */
 
-Route::set('default', '<version>(/<controller>(/<action>))',
+Route::set('default', '(<version>(/<controller>(/<action>)))',
     array(
         'version' => 'v1',
     ))
     ->defaults(array(
+        'version'    => 'v1',
         'controller' => 'welcome',
         'action'     => 'index',
     ));

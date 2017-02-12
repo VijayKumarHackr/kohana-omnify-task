@@ -8,6 +8,7 @@ class Controller_Welcome extends Controller_Rest {
             <h2> API details </h2>
             <b>Sign Up:</b> /index.php/v1/auth/signup<br>
             <b>Login:</b>   /index.php/v1/auth/login<br>
+            <b>Logout:</b>   /index.php/v1/auth/logout<br>
             <b>Create Profile: </b> /index.php/v1/auth/profile/create<br>
             <b>View Profile:</b> /index.php/v1/auth/profile<br>
             ");

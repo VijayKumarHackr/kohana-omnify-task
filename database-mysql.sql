@@ -49,7 +49,8 @@ CREATE TABLE IF NOT EXISTS `profiles` (
     `location` VARCHAR(20),
     `age` INT(2),
     `gender` CHAR(1),
-    PRIMARY KEY(`id`)
+    PRIMARY KEY(`id`),
+    UNIQUE KEY `uniq_user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `roles_users`
@@ -58,3 +59,6 @@ ALTER TABLE `roles_users`
 
 ALTER TABLE `user_tokens`
   ADD CONSTRAINT `user_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+ALTER TABLE `profiles`
+  ADD CONSTRAINT `profiles_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;

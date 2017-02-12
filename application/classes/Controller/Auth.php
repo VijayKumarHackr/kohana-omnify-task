@@ -38,27 +38,45 @@ class Controller_Auth extends Controller_Rest {
             }
         }
         else {
-            $this->response->body("Please provide username, password and email using POST method");
+            $this->response->body("<h2>Please provide the following details using POST method:</h2>
+                <table border='1px'>
+                <tr><th>POST variable</th><th>Meaning</th></tr>
+                <tr><td>username</td><td>Username</td></tr>
+                <tr><td>email</td><td>Email</td></tr>
+                <tr><td>password</td><td>Password</td></tr>
+                </table>
+                ");
         }
     }
 
     public function action_login()
     {
-        if($_POST) {
-            $email = $_POST[ 'email' ];
-            $password = $_POST[ 'password' ];
+        if(Auth::instance()->logged_in())
+        {
+            $this->response->body("You are already logged in!");
+        } else {
+            if($_POST) {
+                $email = $_POST[ 'email' ];
+                $password = $_POST[ 'password' ];
 
-            $response = Auth::instance()->login($email, $password);
-            
-            if($response)
-            {
-                $this->response->body("You have been logged in!");
-            } else {
-                $this->response->body("Authentication failed");
+                $response = Auth::instance()->login($email, $password);
+                
+                if($response)
+                {
+                    $this->response->body("You have been logged in!");
+                } else {
+                    $this->response->body("Authentication failed");
+                }
             }
-        }
-        else {
-            $this->response->body("Please provide email and password via POST");
+            else {
+                $this->response->body("<h2>Please provide the following details using POST method:</h2>
+                    <table border='1px'>
+                    <tr><th>POST variable</th><th>Meaning</th></tr>
+                    <tr><td>email</td><td>Email</td></tr>
+                    <tr><td>password</td><td>Password</td></tr>
+                    </table>
+                ");
+            }
         }
     }
 
