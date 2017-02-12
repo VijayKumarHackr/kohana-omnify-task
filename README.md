@@ -8,13 +8,13 @@ API end point for the following Signup, Login, Create User Profile (After Login)
 * Variables to be posted to a URI can be found by GET request to the URI.
 
 ### API details
-| Action         | Path                                | Method |
-|----------------|-------------------------------------|--------|
-| Sign Up        | `/index.php/v1/auth/signup`         | POST   |
-| Login          | `/index.php/v1/auth/login`          | POST   |
-| Logout         | `/index.php/v1/auth/logout`         | GET    |
-| Create Profile | `/index.php/v1/auth/profile/create` | POST   |
-| View Profile   | `/index.php/v1/auth/profile`        | GET    |
+| Action         | Path                                | Method | Accepted variables                  |
+|----------------|-------------------------------------|--------|-------------------------------------|
+| Sign Up        | `/index.php/v1/auth/signup`         | POST   | username, email, password           |
+| Login          | `/index.php/v1/auth/login`          | POST   | email, password                     |
+| Logout         | `/index.php/v1/auth/logout`         | GET    | N/A                                 |
+| Create Profile | `/index.php/v1/profile/create`      | POST   | fname, lname, gender, age, location |
+| View Profile   | `/index.php/v1/profile`             | GET    | N/A                                 |
 
 ### Database
 `database-mysql.sql` is your database file. Following command can be used to setup the database on Linux machines.
